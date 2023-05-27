@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sprachauswahl für o2 Kunden</title>
+  <style>
+    /* o2 Telefonica-Design-Stile */
+    body {
+      background-color: #f3f3f3;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 80%;
+      margin: 20px auto;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #002d6e;
+    }
+
+    label {
+      font-weight: bold;
+      color: #002d6e;
+    }
+
+    textarea {
+      width: 100%;
+      height: 200px;
+      margin-top: 10px;
+    }
+
+    button {
+      background-color: #002d6e;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    #result {
+      margin-top: 20px;
+      background-color: #e0e0e0;
+      padding: 10px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Sprachauswahl für o2 Kunden</h1>
+    <label for="language">Wähle eine Sprache:</label>
+    <select id="language" style="background-color: #002d6e; color: #fff;">
+      <option value="english">Englisch</option>
+      <option value="portuguese">Portugiesisch</option>
+      <option value="romanian">Rumänisch</option>
+      <option value="russian">Russisch</option>
+    </select>
+    <button onclick="showText()">Anzeigen</button>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function showText() {
+      var language = document.getElementById("language").value;
+      var resultDiv = document.getElementById("result");
+      var text = "";
+
+      switch (language) {
+        case "english":
+          text = "Your English text goes here.";
+          break;
+        case "portuguese":
+          text = "O seu texto em Português vai aqui.";
+          break;
+        case "romanian":
+          text = "Textul tău în limba română merge aici.";
+          break;
+        case "russian":
+          text = "Ваш текст на русском языке здесь.";
+          break;
+        default:
+          text = "Please select a language.";
+      }
+
+      resultDiv.innerHTML = text;
+    }
+  </script>
+</body>
+</html>
